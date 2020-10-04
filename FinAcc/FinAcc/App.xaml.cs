@@ -22,25 +22,27 @@ namespace FinAcc
             await NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
-        static ItemDatabase database;
-        public static ItemDatabase Database
-        {
-            get
-            {
-                if (database == null)
-                {
-                    database = new ItemDatabase();
-                }
-                return database;
-            }
-        }
+        //static ItemDatabase database;
+        //public static ItemDatabase Database
+        //{
+        //    get
+        //    {
+        //        if (database == null)
+        //            containerRegistry.RegisterForNavigation<PrismContentPage1, PrismContentPage1ViewModel>();
+        //        {
+        //            database = new ItemDatabase();
+        //        }
+        //        return database;
+        //    }
+        //}
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-            containerRegistry.RegisterForNavigation<AdditionalPage, AdditionalPageViewModel>();
+            containerRegistry.RegisterForNavigation<ItemsPage, ItemsPageViewModel>();
+            containerRegistry.RegisterForNavigation<AddItemPage, AddItemPageViewModel>();
         }
     }
 }

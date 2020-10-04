@@ -19,14 +19,28 @@ namespace FinAcc.ViewModels
             _navigationService = navigationService;
         }
 
-        private DelegateCommand _navigateCommand;
-        public DelegateCommand NavigateCommand =>
-            _navigateCommand ?? (_navigateCommand = new DelegateCommand(ExecuteNavigateCommand));
+        private DelegateCommand navigateToItems;
+        public DelegateCommand ShowItemsCommand =>
+            navigateToItems ?? (navigateToItems = new DelegateCommand(ShowItems));
+
+        private DelegateCommand navigateToAddItem;
+        public DelegateCommand AddItemCommand =>
+            navigateToAddItem ?? (navigateToAddItem = new DelegateCommand(AddItem));
 
 
-        async void ExecuteNavigateCommand()
+        async void ShowItems()
         {
-            await _navigationService.NavigateAsync("AdditionalPage");
+            await _navigationService.NavigateAsync("ItemsPage");
+        }
+
+        async void AddItem()
+        {
+            await _navigationService.NavigateAsync("AddItemPage");
+        }
+
+        async void ClearTable()
+        {
+            //clear the table;
         }
     }
 }

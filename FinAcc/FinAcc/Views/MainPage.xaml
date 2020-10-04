@@ -5,7 +5,9 @@
              Title="{Binding Title}">
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Button Text="Navigate" Command="{Binding NavigateCommand}"/>
+        <Button Text="Show" Command="{Binding ShowItemsCommand}"/>
+        <Button Text="Add" Command="{Binding AddItemCommand}"/>
+        <Button Text="Clear Table" Command="{Binding ClearTableCommand}"/>
     </StackLayout>
 
 </ContentPage>

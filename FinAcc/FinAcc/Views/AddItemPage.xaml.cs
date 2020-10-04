@@ -2,9 +2,9 @@
 
 namespace FinAcc.Views
 {
-    public partial class AdditionalPage : ContentPage
+    public partial class AddItemPage : ContentPage
     {
-        public AdditionalPage()
+        public AddItemPage()
         {
             InitializeComponent();
         }
